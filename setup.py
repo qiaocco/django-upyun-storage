@@ -1,20 +1,31 @@
 from setuptools import find_packages, setup
 
-packages = find_packages('django_upyun')
+with open('README.md', encoding='utf8') as f:
+    long_description = f.read()
 
 setup(
     name='django-upyun-storage',
-    version=0.1,
-    url='https://blog.jasonqiao36.cc/',
+    version=0.2,
+    description='UpYun utilities for Django2.0',
+    long_description=long_description,
     author='Jason Qiao',
     author_email='jasonqiao36@gmail.com',
-    description='UpYun utils for Django2.x',
-    packages=packages,
-    package_dir={'': 'django_upyun'},
-    include_package_data=True,
+    python_requires='>=3.6.0',
+    url='https://github.com/jasonqiao36/django-upyun-storage',
+    packages=find_packages(exclude=['tests']),
     install_requires=[
         'Django>=2.0',
-        'upyun==2.5.2'
+        'upyun>=2.5.2'
     ],
+    include_package_data=True,
     zip_safe=False,
+    license='MIT',
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        'Framework :: Django',
+        'Environment :: Plugins',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.6',
+    ],
 )
